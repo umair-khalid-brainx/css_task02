@@ -1,0 +1,283 @@
+/* using flexbox */
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/* universal font and box sizing */
+body {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* styling the main container */
+.container {
+    text-align: center;
+}
+
+/* styling the main heading */
+.heading {
+    text-align: center;
+    font-size: 40px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+/* styling main display area */
+.row {
+    display: grid;
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 20px;
+    align-items: center;
+    align-content: center;
+}
+
+/* styling left and right side container */
+.left-plan, .right-plan {
+    width: 300px;
+    height: auto;
+    border: 3px solid lightgray;
+    border-radius: 10px;
+    transition: transform .5s ease-in-out;
+    flex: 35%;
+}
+
+/* styling middle container */
+.mid-plan {
+    width: 300px;
+    height: auto;
+    border: 3px solid rgb(0, 223, 0);
+    border-radius: 10px;
+    position: relative;
+    transition: transform .5s ease-in-out;
+    flex: 30%;
+}
+
+/* adding the triangular border and star */
+.mid-plan::before {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 64px 64px 0 0;
+    border-color: transparent;
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "";
+    border-left-color: #0abf53;
+    border-top-color: #0abf53;
+}
+
+.icon{
+    position: relative;
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 10px;
+    color: rgb(255, 255, 255);
+    z-index: 10;
+}
+
+/* adding the animation to cards */
+.left-plan:hover, .right-plan:hover, .mid-plan:hover {
+    transform: translateY(-30px);
+}
+
+/* styling the container heading */
+.plan-heading {
+    font-size: 30px;
+    text-align: center;
+}
+
+/* styling the container info */
+.info {
+    text-align: center;
+    margin-top: -10px;
+}
+
+/* centering headline parent */
+.headline-parent {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* styling the container headline */
+.headline {
+    width: fit-content;
+    text-align: center;
+    border: 1px solid lightgrey;
+    color: rgb(0, 223, 0);
+    padding: 5px 15px;
+    border-radius: 100px;
+    margin: 20px;
+    background-color: white;
+    position: relative;
+    bottom: -18px;
+    z-index: 2;
+}
+
+/* styling the hr  */
+hr {
+    width: 80%;
+    background-color: #dedede;
+    border: none;
+    height: 1px;
+    display: block;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+}
+
+/* centering the buttons */
+.btn {
+    text-align: center;
+}
+
+/* styling the left and right container buttons */
+.left-right-button {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    background-color: rgb(233, 233, 233);
+    padding: 12px 25px;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    color: rgb(0, 223, 0);
+}
+
+/* adding the animation for left and right button */
+.left-right-button:hover {
+    color: white;
+    background-color: rgb(0, 223, 0);
+}
+
+/* styling the middle button */
+.mid-button {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    background-color: rgb(0, 223, 0);
+    padding: 12px 25px;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}
+
+/* styling the list */
+ul {
+    margin-top: 25px;
+    list-style-type: ">";
+    text-align: left;
+}
+
+/* styling the lsit items */
+li {
+    padding: 10px;
+    color: rgb(100, 100, 100);
+    font-size: 16px;
+}
+
+/* styling the footer text */
+footer p {
+    margin-top: 80px;
+    text-align: center;
+    font-size: 18px;
+    color: rgb(100, 100, 100);
+}
+
+/* styling the sidebar structure and position */
+.sidebar {
+    position: fixed;
+    height: 100%;
+    right: 0px;
+    top: 55px;
+    z-index: 10;
+}
+
+/* styling the inner sidebar */
+.sidebar-content {
+    display: grid;
+    display: inline-grid;
+    grid-template-columns: auto;
+    align-items: center;
+    align-content: center;
+    background-color: rgb(31, 26, 26);
+    border-radius: 20px;
+}
+
+/* styling the sidebar buttons */
+.sidebar-content button {
+    border-bottom: 1px solid rgb(150, 150, 150);
+    display: block;
+    color: rgb(190, 190, 190);
+    background-color: rgb(31, 26, 26);
+    padding: 25px 10px;
+    font-size: 11px;
+}
+
+/* media query for medium screens */
+@media(max-width:990px) {
+    .flex-container {
+        flex-direction: column;
+        flex-flow: row wrap;
+    }
+
+    .row {
+        grid-template-columns: auto auto;
+    }
+
+    .flex-container>.left-plan {
+        margin-top: 20px;
+    }
+
+    .flex-container>.mid-plan {
+        margin-top: 20px;
+    }
+
+    .flex-container>.right-plan {
+        display: inline-block;
+        margin-top: 20px;
+    }
+}
+
+/* media query for small screens */
+@media(max-width:576px) {
+    .flex-container {
+        flex-direction: column;
+        flex-flow: row wrap;
+    }
+    
+    .row {
+        grid-template-columns: auto;
+    }
+
+    .flex-container>.left-plan {
+        margin-top: 20px;
+    }
+
+    .flex-container>.mid-plan {
+        margin-top: 20px;
+    }
+
+    .flex-container>.right-plan {
+        margin-top: 20px;
+    }
+    
+    .heading {
+        font-size: 35px;
+        margin-bottom: 30px;
+    }
+
+    footer p {
+        margin-top: 30px;
+    }
+}
